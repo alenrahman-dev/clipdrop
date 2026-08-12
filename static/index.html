@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClipDrop — Video Downloader</title>
+  <link rel="icon" type="image/png" href="/static/logo.png">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">ONE-CLICK VIDEO DOWNLOADER</div>
+      <h1>Download your video.<br><span>Simple. Fast.</h1>
+      <p>For the best playback experience, we recommend using VLC Media Player or KMPlayer.</p>
+
+      <div class="search-box">
+        <input id="url" type="url" placeholder="Paste video URL here..." autocomplete="off">
+        <button id="analyzeBtn">Analyze</button>
+      </div>
+
+      <p id="status" class="status"></p>
+    </section>
+
+    <section id="result" class="result hidden">
+      <div class="video-card">
+        <img id="thumb" alt="">
+        <div class="video-info">
+          <h2 id="title">Video</h2>
+          <p id="duration"></p>
+        </div>
+      </div>
+
+      <h3>Choose quality</h3>
+      <div id="formats" class="formats"></div>
+
+      <button id="downloadBtn" class="download-btn" disabled>
+        Download MP4
+      </button>
+    </section>
+
+    <footer>
+    <p>Use this tool only for videos/content you are authorized to download.</p>
+
+    <p>
+        <strong>Need a website?</strong><br>
+        I build modern, responsive websites for businesses and personal projects.
+    </p>
+
+    <p>
+        <strong>Web development:</strong>
+        <a href="mailto:alenrahman.dev@gmail.com">alenrahman.dev@gmail.com</a>
+    </p>
+
+    <small>© 2026 ClipDrop. All rights reserved.</small>
+</footer>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
