@@ -48,8 +48,14 @@ def info(req: InfoRequest):
 
     # This endpoint uses yt-dlp only for URLs/content you are permitted to download.
     result = run_cmd(["yt-dlp", "--no-playlist", "--dump-single-json", "--skip-download", url])
-    if result.returncode != 0:
-        raise HTTPException(400, "Could not read this URL. It may be unsupported or unavailable.")
+
+if result.returncode != 0:
+    print("YT-DLP ERROR:")
+    print(result.stderr)
+    raise HTTPException(
+        400,
+        f"yt-dlp error: {result.stderr[-1000:]}"
+    )
 
     import json
     try:
