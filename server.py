@@ -47,7 +47,7 @@ def info(req: InfoRequest):
         raise HTTPException(400, "Please enter a valid http/https URL.")
 
     # This endpoint uses yt-dlp only for URLs/content you are permitted to download.
-    result = run_cmd(["yt-dlp", "--no-playlist", "--dump-single-json", "--skip-download", url])
+    result = run_cmd(["yt-dlp", "--extractor-args", "youtube:player_client=ios", "--no-playlist", "--dump-single-json", "--skip-download", url])
     if result.returncode != 0:
         raise HTTPException(400, "Could not read this URL. It may be unsupported or unavailable.")
 
